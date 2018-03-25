@@ -1,0 +1,43 @@
+package actividades03;
+
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JProgressBar;
+import javax.swing.JScrollPane;
+import javax.swing.JToolBar;
+
+public class Parametros extends JFrame {
+	
+	public Parametros () {
+		super("Parámetros críticos");
+		setSize(300,200);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setLayout (new FlowLayout (FlowLayout.LEFT));
+		JLabel lblCombustible = new JLabel("Combustible");
+		JLabel lblPrecion1 = new JLabel("Presión motor 1");
+		JLabel lblPrecion2 = new JLabel("Presión motor 2");
+		
+		JProgressBar prgCombustible = new JProgressBar(0,100);
+		prgCombustible.setValue(20);
+		prgCombustible.setStringPainted(true);
+		prgCombustible.setPreferredSize(new Dimension(190, 20));
+	
+		add(prgCombustible);
+		add(lblCombustible);
+		
+		setVisible(true);
+	}
+	
+	public static void main(String[] args) {
+		Parametros ventana = new Parametros();
+
+	}
+
+}

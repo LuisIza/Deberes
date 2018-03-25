@@ -1,0 +1,45 @@
+package actividades03;
+
+import java.awt.BorderLayout;
+import java.awt.*;
+import javax.swing.*;
+
+public class TabOpciones extends JFrame {
+	
+	public TabOpciones () {
+		super("Asistente matemático");
+		setSize(300,300);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setLayout (new FlowLayout ());
+		
+		//Cambio de look and feel.
+			try {
+				UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
+				SwingUtilities.updateComponentTreeUI(this);
+			} catch (Exception e) {
+				
+				System.out.println("Error Look");
+			} 
+		//PESTAÑA EDITOR		
+		JPanel panelEditor = new JPanel();
+		JCheckBox chx1 = new JCheckBox("Resaltar palabras clave");
+		JCheckBox chx2 = new JCheckBox("Guardar como XML");
+		panelEditor.add(chx1);
+		panelEditor.add(chx2);
+		ImageIcon imgEditor = new ImageIcon("imgs/73.png");
+		
+		//PANEL DE PESTAÑAS
+		
+		JTabbedPane panelon = new JTabbedPane();
+		panelon.addTab("Editor", imgEditor,panelEditor);
+
+		add(panelon);
+		setVisible(true);
+	}
+	
+	public static void main(String[] args) {
+		TabOpciones ventana = new TabOpciones();
+
+	}
+
+}
